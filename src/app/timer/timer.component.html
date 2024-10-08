@@ -1,4 +1,4 @@
 <p>Seconds left to deadline:
-    <ng-container *ngIf="currentSecondsLeft else loading">{{ currentSecondsLeft }}</ng-container>
-    <ng-template #loading>Loading...</ng-template>
+    <ng-container *ngIf="!loading else loadingTemplate">{{ currentSecondsLeft() }}</ng-container>
+    <ng-template #loadingTemplate>Loading...</ng-template>
 </p>
