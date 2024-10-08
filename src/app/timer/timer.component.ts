@@ -20,20 +20,24 @@ export class TimerComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
   this.timerService.getSecondsLeftMock().pipe(
+    // Uncubscribe when component is destroyed
     takeUntil(this.unsubscriber),
-    switchMap(secondsLeft =>
+    // Cancel first subscription with switchMap: the deadline is already received and it is not going to change
+    switchMap(response =>
+      // Create a new observable that will update currentSeconds each second
       interval(1000)
       .pipe(
-        map(currentSecond => secondsLeft - currentSecond)
+        map(currentSecond => response.secondsLeft - currentSecond)
       )
     )
   ).subscribe(currentSeconds => {
+    // Subscribe to update currentSecondsLeft
     this.currentSecondsLeft = currentSeconds;
   });
     
   }
 
-    ngOnDestroy() {
+  ngOnDestroy() {
     this.unsubscriber.complete();
   }
 
