@@ -1,5 +1,12 @@
 # 6crickets
 
+This project was created as part of the application proccess for the Angular Developer position at 6cricket.
+There are two feature components inside the app folder. TimerComponent contains a solution for the first (Angular) problem. SoftwareCameraComponent contains a solution for the second (General coding) problem.
+
+Thank you for your consideration!
+
+## Tech info
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
 
 ## Development server
