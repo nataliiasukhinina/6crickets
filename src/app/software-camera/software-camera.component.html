@@ -1,0 +1,17 @@
+<h2>Desired characteristics</h2>
+<p>Distance range: [{{ desiredCharacteristics.distanceRange[0] }} - {{ desiredCharacteristics.distanceRange[1] }}]</p>
+<p>Light level range: [{{ desiredCharacteristics.lightLevelRange[0] }} - {{ desiredCharacteristics.lightLevelRange[1] }}]</p>
+<h2>The following cameras work! 😭</h2>
+<div *ngFor="let camera of camerasThatWork">
+    <p>Camera name: {{ camera.name }}</p>
+    <p>Distance range: [{{ camera.specs.distanceRange[0] }} - {{ camera.specs.distanceRange[1] }}]</p>
+    <p>Light level range: [{{ camera.specs.lightLevelRange[0] }} - {{ camera.specs.lightLevelRange[1] }}]</p>
+    <hr />
+</div>
+<h2>The following cameras do not work 😭</h2>
+<div *ngFor="let camera of camerasThatDoNotWork">
+    <p>Camera name: {{ camera.name }}</p>
+    <p>Distance range: [{{ camera.specs.distanceRange[0] }} - {{ camera.specs.distanceRange[1] }}]</p>
+    <p>Light level range: [{{ camera.specs.lightLevelRange[0] }} - {{ camera.specs.lightLevelRange[1] }}]</p>
+    <hr />
+</div>
